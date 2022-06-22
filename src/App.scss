@@ -1,0 +1,46 @@
+@import './styles//color.style';
+
+.App {
+  height: 100vh;
+  width: 100%;
+  
+  text-align: center;
+  
+  color: $textColor;
+  background-color: $backGroundColor;
+  padding: 50px 20px;
+  
+  .App-header {
+    font-size: calc(10px + 2vmin);
+  }
+  
+  .App-body {
+    width: 70%;
+    height: 100%;
+    max-width: 900px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    
+    @import './pages/home/Home.style.scss';
+    
+    .msg {
+      padding: 25px;
+      
+      border-top: 5px solid $borderColor;
+      border-bottom: 5px solid $borderColor;
+      border-radius: 20px;
+    }
+  }
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,93 @@
+.home-page {
+  height: 100%;
+  width: 100%;
+
+  .analyzerComponents-container {
+    margin-top: 40px;
+    
+    .content1 {
+      justify-content: space-evenly;
+
+      .item1 {
+        height: 60px;
+        max-width: 210px;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: red;
+
+        border-radius: 20px;
+      }
+
+      .item1:disabled {
+        opacity: .7;
+        color: $black;
+      }
+
+      .item1.active {
+        background-color: $green;
+      }
+    }
+
+    .content2 {
+      justify-content: space-between;
+      padding: 0 40px;
+
+      .item2 {
+        height: 30px;
+        max-width: 50px;
+        margin-top: 30px;
+        
+        display: flex;
+        align-items: center;
+        // justify-content: center;
+        background-color: $green;
+
+        border-radius: 20px;
+      }
+
+      .item2:disabled {
+
+      }
+    }
+  }
+
+  .chart-container {
+    min-height: 450px;
+    width: 100%;
+    margin-top: 10px;
+    
+    padding-left: 40px;
+    // background-color: red;
+
+    display: flex;
+    color: #0000ff;
+    justify-content: center;
+    align-items: center;
+
+    border-top: 5px solid $borderColor;
+    border-bottom: 5px solid $borderColor;
+    border-radius: 20px;
+  }
+
+  .timeFrameComponent-container {
+    margin: 15px 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    .dropdown {
+      margin: 15px 0;
+      
+      .btn {
+        width: fit-content;
+        padding: 7px 37px;
+      }
+
+      .dropdown-item {
+        text-align: center;
+      }
+    }
+  }
+} 
