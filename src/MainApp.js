@@ -1,4 +1,6 @@
 import React from 'react';
+import { BrowserRouter } from "react-router-dom";
+
 import App from './App';
 
 import { MainProvider } from './contexts/MainContext';
@@ -6,9 +8,11 @@ import { MainProvider } from './contexts/MainContext';
 function MainApp() {
   // console.log('Main App js render');
   return (
-    <MainProvider>
-      <App />
-    </MainProvider>
+    <BrowserRouter basename="/projects/analyzer">
+      <MainProvider>
+        <App />
+      </MainProvider>
+    </BrowserRouter>
   );
 }
 

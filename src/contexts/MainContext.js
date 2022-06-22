@@ -6,7 +6,7 @@ export const MainContext = React.createContext();
 export function MainProvider(Props) {
 
   const [timeType, settimeType] = useState(MainData.times[3]);
-  const [pairs, setpairs] = useState(MainData.pairs[1]);
+  const [pairs, setpairs] = useState(MainData.pairs[2]);
 
   const value = useMemo(
     () => ({ timeType, toggleTimeType, pairs, togglePairs }), 
