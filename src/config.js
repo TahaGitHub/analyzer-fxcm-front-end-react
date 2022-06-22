@@ -12,6 +12,6 @@ config.analyzer_api_host = 'analyzer-back-end-iuautt5bsa-uc.a.run.app'; // 'loca
 // config.analyzer_api_port = 5000;
 config.analyzer_api_proto = 'https'; // http or https
 
-config.analyzer_full_api_host = config.analyzer_api_proto + '://' + config.analyzer_api_host + ':' + config.analyzer_api_port;
+config.analyzer_full_api_host = config.analyzer_api_proto + '://' + config.analyzer_api_host; // + ':' + config.analyzer_api_port;
 
 module.exports = config;
