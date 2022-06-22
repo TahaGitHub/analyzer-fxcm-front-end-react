@@ -3,6 +3,8 @@ import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { MainContext } from '../contexts/MainContext';
 import analyzerApis from '../services/analyzerApis';
 
+import { FadingBalls } from "react-cssfx-loading";
+
 const AnalyzersComponents = ({
   data,
   analysisData_fib, setanalysisData_fib,
@@ -21,6 +23,7 @@ const AnalyzersComponents = ({
   useEffect(() => {
     setfib(false)
     setml(false)
+    setmsg(false)
   }, [mainContext.pairs, mainContext.timeType]);
 
   function percent () {
@@ -37,12 +40,16 @@ const AnalyzersComponents = ({
     }
   }
 
+  function getting_event () {
+    return <FadingBalls color='green' />
+  }
+
   /*
   ** Get analyzes data from own server
   */
   const fib_OnClick = () => {
     console.log('Geting fib analysis data')
-    setmsg(null);
+    setmsg(getting_event());
     setml(e => false)
     setanalysisData_fib(null)
     setanalysisData_ml(null)
@@ -82,6 +89,7 @@ const AnalyzersComponents = ({
         list.push({ pattern: _list1, moving: _list2});
       }
       
+      setmsg(`${list.length} Analysis Found`);
       setanalysisData_fib([...list]);
       // console.log(list);
       setanalysisDataNo(e => e = 0);
@@ -94,7 +102,7 @@ const AnalyzersComponents = ({
 
   const ml_OnClick = () => {   
     console.log('Geting Ml analysis data')
-    setmsg(null);
+    setmsg(getting_event());
     setfib(e => false);
     setanalysisData_fib(null)
     setanalysisData_ml(null)
@@ -138,6 +146,7 @@ const AnalyzersComponents = ({
       }, { xp: list.length + 1 });
 
       // console.log(list)
+      setmsg(`${res.data.patternsArr.length} Pattern Found`);
       setanalysisData_ml(list);
       setanalysisDataNo(e => e = 0);
       setml(e => true);
@@ -173,14 +182,8 @@ const AnalyzersComponents = ({
         </button>
       </div>
 
-      {analysisData_fib?.length && 
-        <span>{analysisData_fib?.length} Analysis Found</span>
-      }
-      {analysisData_ml && 
-        <span>{analysisData_ml?.patternsArr?.length} Pattern Found</span>
-      }
       {msg &&
-        <span>{msg}</span>
+        <span className='analysis-length'>{msg}</span>
       }
 
       <div className='row content2'>
