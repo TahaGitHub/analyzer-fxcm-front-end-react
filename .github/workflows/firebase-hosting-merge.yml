@@ -15,6 +15,6 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_RESUME_WEBSITE_EB389 }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANALYZER_PROJECT_4FAAF }}'
           channelId: live
-          projectId: resume-website-eb389
+          projectId: analyzer-project-4faaf
