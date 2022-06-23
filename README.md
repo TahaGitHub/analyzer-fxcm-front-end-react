@@ -1,4 +1,5 @@
 # analyzer-fxcm-react
+### Front-End Side
 
 Project uses [fxcm Api](https://www.fxcm.com/markets/algorithmic-trading/api-trading/) to fetching currency exchange live state and [Back-End Server](https://github.com/TahaGitHub/analyzer-fxcm-back-end-flask) for getting analysis data that built in python 'flask'.
 
